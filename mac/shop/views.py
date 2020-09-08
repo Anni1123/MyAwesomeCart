@@ -74,7 +74,6 @@ def search(request):
     for cat in cats:
         prodtemp = Product.objects.filter(category=cat)
         prod = [item for item in prodtemp if searchMatch(query, item)]
-
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         if len(prod) != 0:
